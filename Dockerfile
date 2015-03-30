@@ -5,7 +5,6 @@ RUN mkdir -p /opt/bloodhound && chown bloodhound:bloodhound /opt/bloodhound
 RUN wget -O- http://www.carfab.com/apachesoftware/bloodhound/apache-bloodhound-0.8.tar.gz | tar -xvzf-
 RUN { \
   cd apache-bloodhound-0.8/installer; \
-  su bloodhound; \
   virtualenv /opt/bloodhound/bhenv; \
   . /opt/bloodhound/bhenv/bin/activate; \
   pip install -r requirements.txt; \
@@ -14,7 +13,7 @@ RUN { \
 EXPOSE 8080
 
 # After hours of permutations, no form of CMD worked
-CMD ["su", "-c", "virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main" , "bloodhound" ]
+CMD virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main 
 #CMD echo "Docker nonsense."
 
 
