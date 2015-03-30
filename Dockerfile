@@ -15,7 +15,7 @@ EXPOSE 8080
 CMD { \
   su - bloodhound; \
   virtualenv /opt/bloodhound/bhenv/; \
-  source /opt/bloodhound/bhenv/bin/activate; \
+  . /opt/bloodhound/bhenv/bin/activate; \
   tracd --port=8080 /opt/bloodhound/environments/main; \
 }
 
