@@ -7,10 +7,21 @@ RUN { \
   cd apache-bloodhound-0.8/installer; \
   su bloodhound; \
   virtualenv /opt/bloodhound/bhenv; \
-  source /opt/bloodhound/bhenv/bin/activate; \
+  . /opt/bloodhound/bhenv/bin/activate; \
   pip install -r requirements.txt; \
   python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=admin; \
   }
 EXPOSE 8080
-CMD tracd --port=8080 /opt/bloodhound/environments/main
+CMD { \
+  su - bloodhound; \
+  virtualenv /opt/bloodhound/bhenv/; \
+  source /opt/bloodhound/bhenv/bin/activate; \
+  tracd --port=8080 /opt/bloodhound/environments/main; \
+}
+
+#su - bloodhound
+#virtualenv /opt/bloodhound/bhenv/
+#source /opt/bloodhound/bhenv/bin/activate
+#tracd --port=8080 /opt/bloodhound/environments/main
+
 
