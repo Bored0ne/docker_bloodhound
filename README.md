@@ -10,5 +10,7 @@ Run as follows:
 
 ```
 docker build -t bloodhound:0.8 https://github.com/tonigi/bloodhound.git
-docker run -p 8080:8080 bloodhound:0.8
+docker run --name="bloodhound_instance" -d   -p 8080:8080 bloodhound:0.8
 ```
+
+Then connect to your host's port 8080.
