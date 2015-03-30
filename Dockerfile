@@ -16,6 +16,7 @@ CMD { \
   su - bloodhound; \
   virtualenv /opt/bloodhound/bhenv/; \
   . /opt/bloodhound/bhenv/bin/activate; \
+  echo "Starting..."; \
   tracd --port=8080 /opt/bloodhound/environments/main; \
 }
 
