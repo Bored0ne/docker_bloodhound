@@ -13,7 +13,9 @@ RUN { \
   }
 EXPOSE 8080
 #CMD ["su", "-c", "virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main" , "bloodhound" ]
-CMD { virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main }
+CMD echo "Docker nonsense."
+
+
 
 
 # Probably there was no need to run as non-root, given docker
