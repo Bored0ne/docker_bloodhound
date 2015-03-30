@@ -13,6 +13,7 @@ RUN { \
   }
 EXPOSE 8080
 CMD { \
+ echo "Starting..."; \
   su - bloodhound; \
   virtualenv /opt/bloodhound/bhenv/; \
   . /opt/bloodhound/bhenv/bin/activate; \
