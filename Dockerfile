@@ -12,9 +12,9 @@ RUN { \
   python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=admin; \
   }
 EXPOSE 8080
-# After hours of permutations, no form of CMD worked
 
-#CMD ["su", "-c", "virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main" , "bloodhound" ]
+# After hours of permutations, no form of CMD worked
+CMD ["su", "-c", "virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main" , "bloodhound" ]
 #CMD echo "Docker nonsense."
 
 
