@@ -1,5 +1,5 @@
 FROM debian:stable
-RUN apt-get update && apt-get install -y  python python-virtualenv
+RUN apt-get update && apt-get install -y  python python-virtualenv wget
 RUN useradd --system -m bloodhound
 RUN mkdir -p /opt/bloodhound && chown bloodhound:bloodhound /opt/bloodhound
 RUN wget -O- http://www.carfab.com/apachesoftware/bloodhound/apache-bloodhound-0.8.tar.gz | tar -xvzf-
