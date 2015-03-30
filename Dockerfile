@@ -12,14 +12,9 @@ RUN { \
   python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=admin; \
   }
 EXPOSE 8080
-CMD { \
- echo "Starting..."; \
-  su - bloodhound; \
-  virtualenv /opt/bloodhound/bhenv/; \
-  . /opt/bloodhound/bhenv/bin/activate; \
-  echo "Starting..."; \
-  tracd --port=8080 /opt/bloodhound/environments/main; \
-}
+CMD su -c "virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main" bloodhound
+
+# Probably there was no need to run as non-root, given docker
 
 #su - bloodhound
 #virtualenv /opt/bloodhound/bhenv/
