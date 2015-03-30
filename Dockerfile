@@ -12,9 +12,8 @@ RUN { \
   }
 EXPOSE 8080
 
-# After hours of permutations, no form of CMD worked
 CMD virtualenv /opt/bloodhound/bhenv/; . /opt/bloodhound/bhenv/bin/activate; tracd --port=8080 /opt/bloodhound/environments/main 
-#CMD echo "Docker nonsense."
+ 
 
 
 
