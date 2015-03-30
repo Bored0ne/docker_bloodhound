@@ -1,4 +1,4 @@
-FROM ubuntu:14.04
+FROM debian:stable
 RUN apt-get update && apt-get install -y  python python-virtualenv
 RUN useradd --system -m bloodhound
 RUN mkdir -p /opt/bloodhound && chown bloodhound:bloodhound /opt/bloodhound
