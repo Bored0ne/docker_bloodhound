@@ -5,7 +5,7 @@
 Run as follows: 
 
 ```
-docker build -t bloodhound:0.8 https://github.com/tonigi/bloodhound.git
+docker build -t bloodhound:0.8 https://github.com/tonigi/docker_bloodhound.git
 docker run --name="bloodhound_instance" -d   -p 8080:8080 bloodhound:0.8
 ```
 
