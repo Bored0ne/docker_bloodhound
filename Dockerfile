@@ -1,11 +1,10 @@
 FROM debian:stable
 RUN apt-get update && apt-get install -y  python python-virtualenv wget
-RUN useradd --system -m bloodhound
-RUN mkdir -p /opt/bloodhound && chown bloodhound:bloodhound /opt/bloodhound
 RUN wget -O- http://www.carfab.com/apachesoftware/bloodhound/apache-bloodhound-0.8.tar.gz | tar -xvzf-
 RUN { \
-  cd apache-bloodhound-0.8/installer; \
+  mkdir -p /opt/bloodhound; \
   virtualenv /opt/bloodhound/bhenv; \
+  cd apache-bloodhound-0.8/installer; \
   . /opt/bloodhound/bhenv/bin/activate; \
   pip install -r requirements.txt; \
   python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=admin; \
