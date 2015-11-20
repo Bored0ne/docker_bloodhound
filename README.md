@@ -17,6 +17,5 @@ This thing should instead be linked to a MySQL container and modified accordingl
 
 There is also probably no need to create users and such.
 
-This was mostly done as an experiment.
-
+This was mostly done as an experiment. I'm keeping it just as a reminder of Docker syntax.
 
