@@ -1,6 +1,6 @@
-FROM debian:stable
+FROM debian:jessie
 RUN apt-get update && apt-get install -y  python python-virtualenv wget
-RUN wget -O- http://www.carfab.com/apachesoftware/bloodhound/apache-bloodhound-0.8.tar.gz | tar -xvzf-
+RUN wget -O- http://ftp.heanet.ie/mirrors/www.apache.org/dist/bloodhound/apache-bloodhound-0.8.tar.gz  | tar -xvzf-
 RUN { \
   mkdir -p /opt/bloodhound; \
   virtualenv /opt/bloodhound/bhenv; \
