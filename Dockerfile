@@ -7,7 +7,7 @@ RUN { \
   cd apache-bloodhound-0.8/installer; \
   . /opt/bloodhound/bhenv/bin/activate; \
   pip install -r requirements.txt; \
-  python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=admin; \
+  python bloodhound_setup.py --environments_directory=/opt/bloodhound/environments --default-product-prefix=DEF -d sqlite --admin-user=admin --admin-password=password ; \
   }
 EXPOSE 8080
 
