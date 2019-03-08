@@ -10,7 +10,7 @@ See also https://github.com/VanJanssen/apache-bloodhound .
 Run as follows: 
 
 ```
-docker build -t bloodhound:0.8 https://github.com/tonigi/docker_bloodhound.git
+docker build -t bloodhound:0.8 https://github.com/Bored0ne/docker_bloodhound.git
 docker run --name="bloodhound_instance" -d   -p 8080:8080 bloodhound:0.8
 ```
 
